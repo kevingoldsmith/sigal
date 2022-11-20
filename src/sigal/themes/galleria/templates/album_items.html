@@ -1,6 +1,8 @@
 <div class="icons">
+  {% if settings.show_fullscreen %}
   <a id="fullscreen"><img src="{{ theme.url }}/img/fullscreen.png"
                           title="Fullscreen" alt="Fullscreen (f)" /></a>
+  {% endif %}
 </div>
 {% include 'map.html' %}
 <div id="gallery"></div>
@@ -82,10 +84,12 @@
             0x46: this.toggleFullscreen,
         });
 
+        {% if settings.show_fullscreen %}
         var gallery = this;
         $('#fullscreen').click(function() {
           gallery.toggleFullscreen();
         });
+        {% endif %}
 
         $('.icons').appendTo(this.$('container'));
     });
