@@ -102,7 +102,9 @@
         thumbnails: "lazy"
     });
     Galleria.run("#gallery", {dataSource: data});
-
+    {% if album.medias|length < 1 %}
+    $("#gallery").css('height', '0px')
+    {% endif %}
     </script>
   {% endif %}
 {% endblock %}
