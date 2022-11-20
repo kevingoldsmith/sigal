@@ -5,7 +5,7 @@
   {% endif %}
 </div>
 {% include 'map.html' %}
-<div id="gallery"></div>
+<div id="gallery" {% if album.medias|length < 1 %}style="visibility:hidden"{% endif %}></div>
 
 {% include 'download_zip.html' %}
 
@@ -102,9 +102,7 @@
         thumbnails: "lazy"
     });
     Galleria.run("#gallery", {dataSource: data});
-    {% if album.medias|length < 1 %}
-    $("#gallery").css('height', '0px')
-    {% endif %}
+
     </script>
   {% endif %}
 {% endblock %}
