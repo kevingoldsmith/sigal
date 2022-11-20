@@ -64,9 +64,6 @@
       },
       {% endfor %}
     ]
-    {% if album.medias|length < 1 %}
-      $("#gallery").css("visibility", "hidden");
-    {% endif %}
 
     Galleria.ready(function() {
         /*
